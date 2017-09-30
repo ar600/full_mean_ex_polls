@@ -1,0 +1,5 @@
+table,thead, td,tbody{
+  width:40%;
+  text-align: center;
+  /*border: 1px solid darkgray;*/
+}

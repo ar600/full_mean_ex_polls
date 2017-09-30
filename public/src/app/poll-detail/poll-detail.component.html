@@ -1,0 +1,17 @@
+<p>
+  poll-detail works!
+</p>
+{{poll.question}}
+{{poll.option1}}
+<div *ngIf='poll' >
+      <p>Task: {{ poll.option1 }}</p>
+      <!-- <p>Completed: {{ task.completed }}</p> -->
+      <button (click)='goBack()'>Back</button>
+    </div>
+
+
+
+<!-- <div *ngFor='let poll of polls' class="plist">
+<h3>{{poll.}}</h3>
+</div>
+{{poll.question}} -->

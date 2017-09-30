@@ -1,0 +1,29 @@
+<p>
+  create-poll works!
+</p>
+<h1>Put the question and options here</h1>
+<!-- {{polls | json}} -->
+
+<form class="poll-add" (submit)='create()'>
+  Question:
+  <input type="text" name="question" required minlength='8' [(ngModel)]='newPoll.question' #question="ngModel">
+  <p *ngIf='!question.valid' [ngStyle]="{'color':'red'}">minimum 8 charactreers</p>
+<br>
+
+  Option1:
+  <input type="text" name="option1" required minlength='3' [(ngModel)]='newPoll.option1' #option1="ngModel">
+  <p *ngIf='!option1.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+  <br>
+  Option2:
+  <input type="text" name="option2" required minlength='3' [(ngModel)]='newPoll.option2' #option2="ngModel">
+  <p *ngIf='!option2.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+<br>
+  Option3:
+  <input type="text" name="option3" required minlength='3' [(ngModel)]='newPoll.option3' #option3="ngModel">
+  <p *ngIf='!option3.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+<br>
+  Option4:
+  <input type="text" name="option4" required minlength='3' [(ngModel)]='newPoll.option4' #option4="ngModel">
+  <p *ngIf='!option4.valid' [ngStyle]="{'color':'red'}">minimum 3 charactreers</p>
+  <input type="submit" *ngIf="question.valid && option1.valid && option2.valid && option3.valid && option4.valid"  name="submit" value="Add Poll">
+</form>

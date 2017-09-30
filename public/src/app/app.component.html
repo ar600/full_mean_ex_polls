@@ -1,0 +1,33 @@
+<a [routerLink]="['gohome']">Home</a> |
+
+<!-- <a href="pagenotfound">Click</a> -->
+<a href="/">Back</a>
+<!-- <a [routerLink]="['test',test.id]">test1</a> -->
+<!-- <a [routerLink]="['polls']">Polls List </a> | -->
+<!-- <a [routerLink]="['edit']">Edit Product </a> -->
+<a [routerLink]="['create']">Create Poll </a>
+
+<router-outlet> </router-outlet>
+
+<div *ngFor='let poll of polls' class="plist">
+  <table>
+    <thead>
+      <th>Question</th>
+      <th>Date Posted</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a [routerLink]="['polls',poll._id]">{{poll.question}}</a></td>
+        <td>{{poll.createdAt | date: 'medium'}}</td>
+        <td><a [routerLink]="'delete'" (click)="destroy(poll)">delete</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <button type="button" name="delete" (click)='delete(index)'>Delete</button>
+  <button type="button" name="edit" (click)="edit(index)">Edit</button> -->
+  <hr>
+</div>
+<!-- <app-create (mySubmitEventEmitter)='addFunc(event)'></app-create> -->
